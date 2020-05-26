@@ -7,7 +7,6 @@ class WashAddons {
 	
 	public WashAddons() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public WashAddons(Integer id, String addOnType, Float cost) {

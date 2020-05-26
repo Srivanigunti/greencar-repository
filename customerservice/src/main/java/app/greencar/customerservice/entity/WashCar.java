@@ -1,5 +1,8 @@
 package app.greencar.customerservice.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "WashCar")
 public class WashCar {
 	
 	private Integer id;
