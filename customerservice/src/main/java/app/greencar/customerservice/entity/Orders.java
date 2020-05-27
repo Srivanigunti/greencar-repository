@@ -2,7 +2,15 @@ package app.greencar.customerservice.entity;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "OrderDetails")
 public class Orders {
+	@Transient
+	public static final String SEQUENCE_NAME = "users_sequence";
+	@Id
 	public Integer id;
 	public Integer custID;
 	public Integer carID;
@@ -15,7 +23,6 @@ public class Orders {
 
 	public Orders() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Orders(Integer id, Integer custID, Integer carID, String workStatus, Integer washTypeID,
@@ -36,8 +43,8 @@ public class Orders {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(long l) {
+		this.id = (int) l;
 	}
 
 	public Integer getCustID() {
